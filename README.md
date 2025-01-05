@@ -3,9 +3,9 @@
 
 ## Contemporay Software Development CA1 - *Navigating the generative AI landscape in software development.*  
 
-### Student Name:  <*insert your name*>  
+### Student Name:  <*John O'Connell*>  
 
-### Student Number: <*L00xxxxxx*>  
+### Student Number: <*L00188583*>  
 
 ### Instructions  
 
