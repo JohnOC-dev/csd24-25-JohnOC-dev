@@ -1,56 +1,54 @@
 using System;
 
 class CaesarCipher
-{
-    // Constant string representing the uppercase English alphabet.
-    private const string Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+{   
+    /*
+        This method encrypts the input text using the Caesar Cipher technique. 
+        The param "text" contains the input text to be encrypted, and the param "shift" determines the number of positions to shift each letter.
+    */
 
-    /// <summary>
-    /// Encrypts a given text using the Caesar Cipher technique.
-    /// </summary>
-    /// <param name="text">The input text to be encrypted.</param>
-    /// <param name="shift">The number of positions to shift each letter.</param>
-    /// <returns>The encrypted text.</returns>
+    // Improvement  1: Eliminated hardcoded alphabet by using char arithmetic. This makes the algorithm more efficient and adaptable to different character sets
     public static string Encrypt(string text, int shift)
     {
         return ProcessText(text, shift);
     }
 
-    /// <summary>
-    /// Decrypts a given text that was encrypted using the Caesar Cipher.
-    /// </summary>
-    /// <param name="text">The encrypted text to be decrypted.</param>
-    /// <param name="shift">The number of positions used in encryption (reversed in decryption).</param>
-    /// <returns>The decrypted text.</returns>
+    
+    /*
+        This method decrypts the text that was previously encrypted using the Caesar Cipher.
+        Here, "text" contains the encrypted text to be decrypted, and "shift" is the number of position that were used during encryption(applied in reverse during decryption).
+    */
     public static string Decrypt(string text, int shift)
     {
-        return ProcessText(text, -shift); // Reverse the shift to decrypt
+        return ProcessText(text, -shift); // Reverses the shift to decrypt
     }
 
-    /// <summary>
-    /// Processes text for both encryption and decryption.
-    /// </summary>
-    /// <param name="text">The input text to process.</param>
-    /// <param name="shift">The number of positions to shift (positive for encryption, negative for decryption).</param>
-    /// <returns>The transformed text.</returns>
+    /*
+        The "ProcessText" method processes the input text for both encryption and decryption while preserving the letter case and handling non-letter characters.
+        "text" always contains the input text to be processed, and "shift" is the number of positions to shift each letter (positive for encryption, negative for decryption).
+        The return value is the transformed text.
+    */
     private static string ProcessText(string text, int shift)
     {
-        char[] buffer = text.ToUpper().ToCharArray(); // Convert text to uppercase and store it in a character array
+        char[] buffer = text.ToCharArray(); // Convert text into a character array
 
         for (int i = 0; i < buffer.Length; i++)
         {
             char letter = buffer[i];
 
-            // Check if the character is a letter (ignores numbers, symbols, etc.)
+            // Improvement 2: Preserve case by determining if the letter is uppercase or lowercase
             if (char.IsLetter(letter))
             {
-                int letterIndex = Alphabet.IndexOf(letter); // Find letter position in the alphabet
-                int newIndex = (letterIndex + shift + Alphabet.Length) % Alphabet.Length; // Shift and wrap around if needed
-                buffer[i] = Alphabet[newIndex]; // Replace the character with the shifted one
+                char baseChar = char.IsUpper(letter) ? 'A' : 'a'; // Maintains original case
+                int newIndex = ((letter - baseChar + shift) % 26 + 26) % 26; // Handles wrap-around correctly
+                buffer[i] = (char)(baseChar + newIndex); // Shifted letter while preserving case
             }
+
+            // Improvement 3: Non-letter characters remain unchanged
+            // Unlike the previous implementation, punctuation, numbers, and spaces are retained
         }
 
-        return new string(buffer); // Convert char array back to string
+        return new string(buffer); // Convert the character array back to a string
     }
 
     public static void Main()
@@ -59,7 +57,9 @@ class CaesarCipher
         string input = Console.ReadLine();
 
         Console.Write("Enter shift value: ");
-        if (int.TryParse(Console.ReadLine(), out int shift))
+
+        // Improvement 4: Input validation to prevent crashes and unexpected behavior, .IsNullOrWhiteSpace() checks for null, empty, or whitespace strings
+        if (!string.IsNullOrWhiteSpace(input) && int.TryParse(Console.ReadLine(), out int shift))
         {
             string encrypted = Encrypt(input, shift);
             string decrypted = Decrypt(encrypted, shift);
@@ -69,7 +69,7 @@ class CaesarCipher
         }
         else
         {
-            Console.WriteLine("Invalid shift value. Please enter a number.");
+            Console.WriteLine("Invalid input. Please enter a valid text and a numerical shift value."); // Error message for invalid input
         }
     }
 }

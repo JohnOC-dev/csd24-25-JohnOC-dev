@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("csd24-25-JohnOC-dev")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9bac63c10b464ff57dcc51482cf9ce002201dd81")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+068f513845ddd654aa43f9a609e1ac7c366b605a")]
 [assembly: System.Reflection.AssemblyProductAttribute("csd24-25-JohnOC-dev")]
 [assembly: System.Reflection.AssemblyTitleAttribute("csd24-25-JohnOC-dev")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
