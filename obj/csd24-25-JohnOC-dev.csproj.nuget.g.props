@@ -13,4 +13,7 @@
     <SourceRoot Include="C:\Users\johno\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgMSTest_Analyzers Condition=" '$(PkgMSTest_Analyzers)' == '' ">C:\Users\johno\.nuget\packages\mstest.analyzers\3.7.0</PkgMSTest_Analyzers>
+  </PropertyGroup>
 </Project>

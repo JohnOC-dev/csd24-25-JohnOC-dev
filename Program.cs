@@ -1,6 +1,6 @@
 using System;
 
-class CaesarCipher
+public class CaesarCipher
 {   
     /*
         This method encrypts the input text using the Caesar Cipher technique. 

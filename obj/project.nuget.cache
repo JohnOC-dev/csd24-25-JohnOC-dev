@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ZCd9vfe7/IE=",
+  "dgSpecHash": "1Ik659OOh48=",
   "success": true,
   "projectFilePath": "C:\\Users\\johno\\Documents\\GitHub\\csd24-25-JohnOC-dev\\csd24-25-JohnOC-dev.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\johno\\.nuget\\packages\\mstest.analyzers\\3.7.0\\mstest.analyzers.3.7.0.nupkg.sha512",
+    "C:\\Users\\johno\\.nuget\\packages\\mstest.testframework\\3.7.0\\mstest.testframework.3.7.0.nupkg.sha512"
+  ],
   "logs": []
 }
