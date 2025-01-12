@@ -1,0 +1,15 @@
+C:\Users\johno\Documents\GitHub\csd24-25-JohnOC-dev\bin\Debug\net8.0\csd24-25-JohnOC-dev.exe
+C:\Users\johno\Documents\GitHub\csd24-25-JohnOC-dev\bin\Debug\net8.0\csd24-25-JohnOC-dev.deps.json
+C:\Users\johno\Documents\GitHub\csd24-25-JohnOC-dev\bin\Debug\net8.0\csd24-25-JohnOC-dev.runtimeconfig.json
+C:\Users\johno\Documents\GitHub\csd24-25-JohnOC-dev\bin\Debug\net8.0\csd24-25-JohnOC-dev.dll
+C:\Users\johno\Documents\GitHub\csd24-25-JohnOC-dev\bin\Debug\net8.0\csd24-25-JohnOC-dev.pdb
+C:\Users\johno\Documents\GitHub\csd24-25-JohnOC-dev\obj\Debug\net8.0\csd24-25-JohnOC-dev.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\johno\Documents\GitHub\csd24-25-JohnOC-dev\obj\Debug\net8.0\csd24-25-JohnOC-dev.AssemblyInfoInputs.cache
+C:\Users\johno\Documents\GitHub\csd24-25-JohnOC-dev\obj\Debug\net8.0\csd24-25-JohnOC-dev.AssemblyInfo.cs
+C:\Users\johno\Documents\GitHub\csd24-25-JohnOC-dev\obj\Debug\net8.0\csd24-25-JohnOC-dev.csproj.CoreCompileInputs.cache
+C:\Users\johno\Documents\GitHub\csd24-25-JohnOC-dev\obj\Debug\net8.0\csd24-25-JohnOC-dev.sourcelink.json
+C:\Users\johno\Documents\GitHub\csd24-25-JohnOC-dev\obj\Debug\net8.0\csd24-25-JohnOC-dev.dll
+C:\Users\johno\Documents\GitHub\csd24-25-JohnOC-dev\obj\Debug\net8.0\refint\csd24-25-JohnOC-dev.dll
+C:\Users\johno\Documents\GitHub\csd24-25-JohnOC-dev\obj\Debug\net8.0\csd24-25-JohnOC-dev.pdb
+C:\Users\johno\Documents\GitHub\csd24-25-JohnOC-dev\obj\Debug\net8.0\csd24-25-JohnOC-dev.genruntimeconfig.cache
+C:\Users\johno\Documents\GitHub\csd24-25-JohnOC-dev\obj\Debug\net8.0\ref\csd24-25-JohnOC-dev.dll
