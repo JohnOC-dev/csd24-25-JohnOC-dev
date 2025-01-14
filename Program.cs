@@ -6,21 +6,22 @@ public class CaesarCipher
         This method encrypts the input text using the Caesar Cipher technique. 
         The param "text" contains the input text to be encrypted, and the param "shift" determines the number of positions to shift each letter.
     */
-
-    // Improvement  1: Eliminated hardcoded alphabet by using char arithmetic. This makes the algorithm more efficient and adaptable to different character sets
     public static string Encrypt(string text, int shift)
     {
+        if (shift > 10) 
+        {
+            shift = 10; // Bug #1: Shift value is limited to a maximum of 10, even if the user enters a higher value. Forces shift to a max of 10, ignoring the user input
+        }
         return ProcessText(text, shift);
     }
 
-    
     /*
         This method decrypts the text that was previously encrypted using the Caesar Cipher.
-        Here, "text" contains the encrypted text to be decrypted, and "shift" is the number of position that were used during encryption(applied in reverse during decryption).
+        Here, "text" contains the encrypted text to be decrypted, and "shift" is the number of positions that were used during encryption (applied in reverse during decryption).
     */
     public static string Decrypt(string text, int shift)
     {
-        return ProcessText(text, -shift); // Reverses the shift to decrypt
+        return ProcessText(text, shift); // Bug #2: Negative shifts are not correctly reversed. Should be -shift, but intentionally incorrect.
     }
 
     /*
@@ -36,16 +37,19 @@ public class CaesarCipher
         {
             char letter = buffer[i];
 
-            // Improvement 2: Preserve case by determining if the letter is uppercase or lowercase
+            // Bug #3: Letters shift incorrectly beyond 'Z' and 'z' due to missing wrap-around fix
             if (char.IsLetter(letter))
             {
                 char baseChar = char.IsUpper(letter) ? 'A' : 'a'; // Maintains original case
-                int newIndex = ((letter - baseChar + shift) % 26 + 26) % 26; // Handles wrap-around correctly
-                buffer[i] = (char)(baseChar + newIndex); // Shifted letter while preserving case
+                int newIndex = (letter - baseChar + shift) % 26; // BUG: Removed "+ 26" for negative shift handling.
+                buffer[i] = (char)(baseChar + newIndex); // Shifted letter (with potential incorrect wrapping)
             }
 
-            // Improvement 3: Non-letter characters remain unchanged
-            // Unlike the previous implementation, punctuation, numbers, and spaces are retained
+            // Bug #4: Numbers are mistakenly shifted as well
+            if (char.IsDigit(letter))
+            {
+                buffer[i] = (char)(letter + shift); // BUG: Shifts digits incorrectly (could result in symbols)
+            }
         }
 
         return new string(buffer); // Convert the character array back to a string
